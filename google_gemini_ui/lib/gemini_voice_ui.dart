@@ -149,7 +149,7 @@ class _GeminiVoiceUIState extends State<GeminiVoiceUI>
                 color: Colors.black54,
               ),
             ),
-            const SizedBox(height: 16), // Add spacing between text and icon
+            const SizedBox(height: 16),
             GestureDetector(
               onTap: _startAnimation,
               child: Stack(
