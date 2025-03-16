@@ -8,7 +8,7 @@ class GoogleVoiceUI extends StatefulWidget {
   const GoogleVoiceUI({super.key});
 
   @override
-  _GoogleVoiceUIState createState() => _GoogleVoiceUIState();
+  State<GoogleVoiceUI> createState() => _GoogleVoiceUIState();
 }
 
 class _GoogleVoiceUIState extends State<GoogleVoiceUI> {
@@ -152,7 +152,6 @@ class _GoogleVoiceUIState extends State<GoogleVoiceUI> {
         );
       },
     ).then((_) {
-      // When bottom sheet is closed
       _bottomSheetSetState = null;
       if (_isListening) {
         _stopListening();
@@ -167,7 +166,6 @@ class _GoogleVoiceUIState extends State<GoogleVoiceUI> {
     _stopTimer?.cancel();
     _stopTimer = Timer(const Duration(seconds: 5), () {
       _stopListening();
-      // Close bottom sheet when listening stops
       if (_isBottomSheetOpen && mounted) {
         Navigator.of(context).pop();
       }
@@ -238,8 +236,7 @@ class AnimatedVoiceBar extends StatefulWidget {
   final double maxWidth;
 
   const AnimatedVoiceBar(
-      {Key? key, required this.isListening, required this.maxWidth})
-      : super(key: key);
+      {super.key, required this.isListening, required this.maxWidth});
 
   @override
   State<AnimatedVoiceBar> createState() => _AnimatedVoiceBarState();

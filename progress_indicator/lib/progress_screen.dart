@@ -4,7 +4,7 @@ class ProgressScreen extends StatefulWidget {
   const ProgressScreen({super.key});
 
   @override
-  _ProgressScreenState createState() => _ProgressScreenState();
+  State<ProgressScreen> createState() => _ProgressScreenState();
 }
 
 class _ProgressScreenState extends State<ProgressScreen>
@@ -121,10 +121,10 @@ class VerticalStepIndicator extends StatelessWidget {
           String step = entry.value;
           bool isLast = index == steps.length - 1;
           Color nodeColor = statuses[index] == "Completed"
-              ? Color(0xff557FFE)
+              ? const Color(0xff557FFE)
               : statuses[index] == "In Progress"
-                  ? Color(0xff557FFE)
-                  : Color(0xffAABFFF);
+                  ? const Color(0xff557FFE)
+                  : const Color(0xffAABFFF);
           String statusText = statuses[index];
           Widget iconWidget = Icon(
             statuses[index] == "Completed" ? Icons.check : null,
@@ -188,10 +188,10 @@ class VerticalStepIndicator extends StatelessWidget {
                             builder: (context, child) {
                               Color staticLineColor = index < currentStep &&
                                       statuses[index] == "Completed"
-                                  ? Color(0xff557FFE)
-                                  : Color(0xffAABFFF);
+                                  ? const Color(0xff557FFE)
+                                  : const Color(0xffAABFFF);
                               ;
-                              Color animatedLineColor = Color(0xff557FFE);
+                              Color animatedLineColor = const Color(0xff557FFE);
 
                               return Stack(
                                 alignment: Alignment.topCenter,

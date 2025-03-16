@@ -60,11 +60,11 @@ class _GeminiVoiceUIState extends State<GeminiVoiceUI>
 
     _middleColor = ColorTween(
       begin: const Color(0xFF5684D1),
-      end: const Color.fromARGB(255, 51, 187, 255),
+      end: const Color(0xff33BBFF),
     ).animate(_gradientController);
 
     _endColor = ColorTween(
-      begin: const Color.fromARGB(255, 51, 187, 255),
+      begin: const Color(0xff33BBFF),
       end: const Color(0xFF9168C0),
     ).animate(_gradientController);
   }
@@ -227,8 +227,8 @@ class _ShapeConfig {
         ),
       );
 
-  factory _ShapeConfig.stadium() => _ShapeConfig(
-        shape: const StadiumBorder(),
+  factory _ShapeConfig.stadium() => const _ShapeConfig(
+        shape: StadiumBorder(),
         isWider: true,
       );
 
