@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(child: Text("Home Screen", style: TextStyle(fontSize: 24)));
@@ -11,30 +13,38 @@ class HomeScreen extends StatelessWidget {
 }
 
 class ChatScreen extends StatelessWidget {
+  const ChatScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Chat Screen", style: TextStyle(fontSize: 24)));
+    return const Center(child: Text("Chat Screen", style: TextStyle(fontSize: 24)));
   }
 }
 
 class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Search Screen", style: TextStyle(fontSize: 24)));
+    return const Center(child: Text("Search Screen", style: TextStyle(fontSize: 24)));
   }
 }
 
 class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Notification Screen", style: TextStyle(fontSize: 24)));
+    return const Center(child: Text("Notification Screen", style: TextStyle(fontSize: 24)));
   }
 }
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Profile Screen", style: TextStyle(fontSize: 24)));
+    return const Center(child: Text("Profile Screen", style: TextStyle(fontSize: 24)));
   }
 }
 
@@ -74,16 +84,15 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         title: "Profile"),
   ];
 
-  // Screens corresponding to bottom navigation items
   final List<Widget> screens = [
-    HomeScreen(),
-    ChatScreen(),
-    SearchScreen(),
-    NotificationScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const ChatScreen(),
+    const SearchScreen(),
+    const NotificationScreen(),
+    const ProfileScreen(),
   ];
 
-  int currentIndex = 0; // Tracks selected tab index
+  int currentIndex = 0; 
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +116,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               (index) => GestureDetector(
                 onTap: () {
                   setState(() {
-                    currentIndex = index; // Update selected index
+                    currentIndex = index;
                   });
 
                   if (bottomNavs[index].input != null) {
@@ -118,7 +127,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                   }
                 },
                 child: Column(
-                  mainAxisSize: MainAxisSize.min, // Prevents overflow
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     SizedBox(
                       height: 36,
